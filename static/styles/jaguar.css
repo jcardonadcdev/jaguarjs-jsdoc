@@ -39,6 +39,11 @@ li {
 .navigation .applicationName a {
   color: #fff;
 }
+.navigation .typeHeading {
+  font: 600 1.1em Helvetica;
+  color: #f5f5f5;
+  border-bottom: 1px solid #333;
+}
 .navigation .search {
   padding: 10px 15px;
 }
@@ -56,7 +61,7 @@ li {
 .navigation li.item {
   margin-bottom: 8px;
   padding-bottom: 8px;
-  border-bottom: 1px solid #333;
+  /*border-bottom: 1px solid #333;*/
 }
 .navigation li.item a {
   color: #bbb;
@@ -340,6 +345,18 @@ li {
   margin-bottom: 5px;
 }
 .main article ul > li {
+  margin-bottom: 5px;
+  list-style-type: disc;
+}
+.main .class-description ol,
+.main .class-description ul {
+  margin-left: 25px;
+}
+.main .class-description ol > li {
+  list-style-type: decimal;
+  margin-bottom: 5px;
+}
+.main .class-description ul > li {
   margin-bottom: 5px;
   list-style-type: disc;
 }

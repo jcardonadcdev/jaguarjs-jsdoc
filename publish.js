@@ -200,11 +200,12 @@ function attachModuleSymbols(doclets, modules) {
  * @return {string} The HTML for the navigation sidebar.
  */
 function buildNav(members) {
-    var nav = [];
+    var nav = {};
 
     if (members.namespaces.length) {
+        var namespaces = [];
         _.each(members.namespaces, function (v) {
-            nav.push({
+            namespaces.push({
                 type: 'namespace',
                 longname: v.longname,
                 name: v.name,
@@ -226,11 +227,14 @@ function buildNav(members) {
                 })
             });
         });
+
+        nav.Namespaces = namespaces;
     }
 
     if (members.classes.length) {
+        var classes = [];
         _.each(members.classes, function (v) {
-            nav.push({
+            classes.push({
                 type: 'class',
                 longname: v.longname,
                 name: v.name,
@@ -252,11 +256,14 @@ function buildNav(members) {
                 })
             });
         });
+
+        nav.Classes = classes;
     }
 
     if (members.modules.length) {
+        var modules = [];
         _.each(members.modules, function(v) {
-            nav.push({
+            modules.push({
                 type: 'module',
                 longname: v.longname,
                 name: v.name,
@@ -278,6 +285,8 @@ function buildNav(members) {
                 })
             });
         });
+
+        nav.Modules = modules;
     }
 
     return nav;
