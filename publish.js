@@ -208,6 +208,7 @@ function buildNav(members) {
             namespaces.push({
                 type: 'namespace',
                 longname: v.longname,
+                filename: (v.meta && v.meta.filename) || v.longname,
                 name: v.name,
                 members: find({
                     kind: 'member',
@@ -238,6 +239,7 @@ function buildNav(members) {
                 type: 'class',
                 longname: v.longname,
                 name: v.name,
+                filename: (v.meta && v.meta.filename) || v.longname,
                 members: find({
                     kind: 'member',
                     memberof: v.longname
@@ -267,6 +269,7 @@ function buildNav(members) {
                 type: 'module',
                 longname: v.longname,
                 name: v.name,
+                filename: (v.meta && v.meta.filename) || v.longname,
                 members: find({
                     kind: 'member',
                     memberof: v.longname
