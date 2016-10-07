@@ -15,7 +15,7 @@ var self = this;
         <?js
         this.nav[key].forEach(function (item) {
         ?>
-            <li class="item" data-name="<?js= item.longname ?>">
+            <li class="item" data-name="<?js= item.url || item.longname ?>">
                 <span class="title">
                     <?js= self.linkto(item.longname, item.longname) ?>
                     <?js if (item.type === 'namespace') { ?>
